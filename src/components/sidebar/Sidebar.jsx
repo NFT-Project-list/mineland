@@ -26,7 +26,6 @@ export const Sidebar = ({
       }
       return item;
     });
-    console.log(sellList);
     setSellList({ ...sellList });
   };
 

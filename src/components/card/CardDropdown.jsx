@@ -1,7 +1,7 @@
 import { CurrencyDollarIcon, DotsVerticalIcon } from "@heroicons/react/outline";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { XIcon } from "@heroicons/react/solid";
+import { RefreshIcon } from "@heroicons/react/solid";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
 export const CardDropdown = ({
@@ -16,7 +16,7 @@ export const CardDropdown = ({
       icon: <ArrowRightIcon className="h-5 w-5 mr-2 font-semibold" />,
     },
     {
-      title: "Sell",
+      title: "Sell on Market",
       fn: setSellItems,
       icon: <CurrencyDollarIcon className="h-5 w-5 mr-2 font-semibold" />,
     },
@@ -24,9 +24,9 @@ export const CardDropdown = ({
 
   if (setKillItem) {
     actions.push({
-      title: "Kill",
+      title: "Exchange to MNL",
       fn: setKillItem,
-      icon: <XIcon className="h-5 w-5 mr-2 font-semibold" />,
+      icon: <RefreshIcon className="h-5 w-5 mr-2 font-semibold" />,
     });
   }
 
@@ -48,7 +48,7 @@ export const CardDropdown = ({
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items
-          className="shadow-lg shadow-main origin-top absolute right-0 mr-1 mt-1 w-48 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+          className="shadow-lg shadow-main origin-top absolute right-[-5px] mr-0 mt-1 w-56 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             {actions.map((action, index) => (
               <Menu.Item key={index}>

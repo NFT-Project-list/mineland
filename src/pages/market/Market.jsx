@@ -78,7 +78,6 @@ export const Market = ({ currentUser, contract }) => {
 
   const handleBuy = () => {
     setIsReady(false);
-    console.log("buy");
     setIsReady(true);
   };
 

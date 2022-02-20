@@ -74,9 +74,8 @@ export const HomeContent = {
 
 export const MineContent = {
   title: "My Mines",
-  description: `It is a long established fact that a reader will be distracted the
-  readable content of page when looking at it layout the point using
-  lorem Ipsum is that it has a more-or-less normal distribution and normal distribution.`,
+  description: `Mines give you ability to mint stones each 24 hours: Small Mine: 1 stone/day, 
+  Medium Mine: 4 stones/day and Large Mine: 8 stones/day.`,
   no_mines: "You don't have Mines",
   no_mines_details:
     "But you can mint Small Mine for free (only 0.01 storage cost) or buy Medium and Large mines",

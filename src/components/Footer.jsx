@@ -62,7 +62,11 @@ export const Footer = () => (
               <Link size="sm" className="block leading-7 uppercase" to="/faq">
                 FAQ
               </Link>
+              <Link size="sm" className="block leading-7 uppercase" to="/token">
+                Staking
+              </Link>
             </Col>
+
             <Col className="w-1/3">
               <Link
                 size="sm"

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { initContract } from "./near/api";
 import {
+  Collections,
   ContactUs,
   Faq,
   Mines,
@@ -88,6 +89,13 @@ export const App = () => {
                   sellList={sellList}
                   setSellList={setSellList}
                 />
+              }
+            />
+            <Route
+              exact
+              path="/collections"
+              element={
+                <Collections currentUser={currentUser} contract={contract} />
               }
             />
             <Route
