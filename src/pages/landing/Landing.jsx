@@ -8,10 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "components/basic/Button";
 import { HomeContent } from "utils/content";
 import { HowToPlaySection } from "./HowToPlaySection";
-import { RoadmapSection } from "./RoadmapSection";
 import { Section } from "./Section";
 import { Footer } from "components/Footer";
-import { Timeline } from "assets/styles/home.style";
 
 const CircleSection = ({ number, title, desc }) => (
   <Col className="mx-10 text-center items-center leading-normal">
@@ -86,27 +84,6 @@ export const Landing = ({ currentUser }) => {
             img={mint_mine}
           />
         </Container>
-        <Container className="py-20">
-          <Section
-            title={HomeContent.roadmap.title}
-            description={HomeContent.roadmap.desc}
-          >
-            <Col>
-              <Timeline>
-                {HomeContent.roadmap.sections.map((section, index) => (
-                  <RoadmapSection
-                    key={index}
-                    date={section.date}
-                    title={section.title}
-                    desc={section.desc}
-                    type={section.type}
-                  />
-                ))}
-              </Timeline>
-            </Col>
-          </Section>
-        </Container>
-
         <Footer />
       </Wrapper>
     </div>
