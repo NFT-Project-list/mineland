@@ -52,18 +52,18 @@ fn mint_collection() {
 
     let mut unique_index: Vec<u8> = vec![];
     let mut unique_stone_ids: Vec<String> = vec![];
-    let mut total_health: u8 = 0;
-    let mut total_attack: u8 = 0;
-    let mut total_brain: u8 = 0;
+    let mut total_hardness: u8 = 0;
+    let mut total_density: u8 = 0;
+    let mut total_durability: u8 = 0;
     let mut total_kill_tokens: u128 = 0;
 
     for stone in stones.iter() {
         if !unique_index.contains(&stone.collection_index) {
             unique_index.push(stone.collection_index);
             unique_stone_ids.push(stone.token_id.to_string());
-            total_health += stone.health;
-            total_attack += stone.attack;
-            total_brain += stone.brain;
+            total_hardness += stone.hardness;
+            total_density += stone.density;
+            total_durability += stone.durability;
             total_kill_tokens += stone.kill_tokens.parse::<u128>().unwrap();
         }
     }
@@ -78,9 +78,9 @@ fn mint_collection() {
 
         let monster: Monster = mint_result.unwrap_json();
 
-        assert_eq!(total_health, monster.health);
-        assert_eq!(total_attack, monster.attack);
-        assert_eq!(total_brain, monster.brain);
+        assert_eq!(total_hardness, monster.hardness);
+        assert_eq!(total_density, monster.density);
+        assert_eq!(total_durability, monster.durability);
         assert_eq!(total_kill_tokens.to_string(), monster.kill_tokens);
 
         let metadata_result: Vec<JsonToken> = view!(

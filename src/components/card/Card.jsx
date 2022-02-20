@@ -28,18 +28,21 @@ export const Card = ({
 
   return (
     <>
-      <FlipCard noFlip={true} className={`${classMapping[size || "md"]}`}>
+      <FlipCard noFlip={size === "sm"} className={`${classMapping[size || "md"]}`}>
         <CardInner>
           <FrontCard
+            nft={nft}
+            size={size}
+            noMenu={noMenu}
+          />
+          <BackCard
             nft={nft}
             size={size}
             noMenu={noMenu}
             setSellItems={setSellItems}
             setTransferPopupVisible={setTransferPopupVisible}
             setKillItem={setKillItem}
-            // setSellPopupVisible={setSellPopupVisible}
           />
-          <BackCard nft={nft} size={size} />
 
           {/* <CardBack className="relative">
             <img
@@ -67,11 +70,11 @@ export const Card = ({
                 #{nft.token_id ? formatId(nft.token_id) : ""}
               </div>
 
-              {nft.health && nft.attack && nft.brain && (
+              {nft.hardness && nft.density && nft.durability && (
                 <div className="mt-6">
-                  <p>Health: {nft.health}</p>
-                  <p>Attack: {nft.attack}</p>
-                  <p>Brain: {nft.brain}</p>
+                  <p>Hardness: {nft.hardness}</p>
+                  <p>Density: {nft.density}</p>
+                  <p>Durability: {nft.durability}</p>
                 </div>
               )}
 

@@ -48,9 +48,9 @@ pub struct Stone {
     pub collection_id: u32,
     pub collection_index: u8,
     pub mint_date: u64,
-    pub health: u8,
-    pub attack: u8,
-    pub brain: u8,
+    pub hardness: u8,
+    pub density: u8,
+    pub durability: u8,
 }
 
 impl Stone {
@@ -101,10 +101,10 @@ impl Contract {
 
             // Add for user
             let card_rarity = self.generate_stone_card_rarity(&current_mine.mine_type, num as usize);
-            let health = self.generate_stone_health(num as usize);
-            let attack = self.generate_stone_attack(num as usize);
-            let brain = self.generate_stone_brain(num as usize);
-            let kill_tokens = self.generate_stone_kill_tokens(&card_rarity, &health, &attack, &brain);
+            let hardness = self.generate_stone_hardness(num as usize);
+            let density = self.generate_stone_density(num as usize);
+            let durability = self.generate_stone_durability(num as usize);
+            let kill_tokens = self.generate_stone_kill_tokens(&card_rarity, &hardness, &density, &durability);
 
             // Add stone to user Rarity & Collection
             self.stone_add_user_rarity(&owner_id, &token_id, &card_rarity);
@@ -119,9 +119,9 @@ impl Contract {
                 collection_id,
                 collection_index,
                 card_rarity,
-                health,
-                attack,
-                brain,
+                hardness,
+                density,
+                durability,
             };
             self.stones.insert(&token_id, &stone);
             user_stones.push(token_id.to_string());
@@ -187,24 +187,24 @@ impl Contract {
     }
 
     // 1 - 6
-    pub(crate) fn generate_stone_health(&self, num: usize) -> u8 {
+    pub(crate) fn generate_stone_hardness(&self, num: usize) -> u8 {
         let rand_val = self.random_u8_range(5 + num, 5);
         rand_val + 1
     }
 
     // 1 - 3
-    pub(crate) fn generate_stone_attack(&self, num: usize) -> u8 {
+    pub(crate) fn generate_stone_density(&self, num: usize) -> u8 {
         let rand_val = self.random_u8_range(10 + num, 2);
         rand_val + 1
     }
 
     // 0 - 2
-    pub(crate) fn generate_stone_brain(&self, num: usize) -> u8 {
+    pub(crate) fn generate_stone_durability(&self, num: usize) -> u8 {
         let rand_val = self.random_u8_range(15 + num, 2);
         rand_val
     }
 
-    pub(crate) fn generate_stone_kill_tokens(&self, card_rarity: &CardRarity, health: &u8, attack: &u8, brain: &u8) -> u128 {
+    pub(crate) fn generate_stone_kill_tokens(&self, card_rarity: &CardRarity, hardness: &u8, density: &u8, durability: &u8) -> u128 {
         let one_token: u128 = self.to_yocto("1");
         let rarity: u128 = match card_rarity {
             CardRarity::Legendary => 70,
@@ -212,7 +212,7 @@ impl Contract {
             CardRarity::UnCommon => 8,
             CardRarity::Common => 2
         };
-        return (health + attack + brain) as u128 * rarity * one_token;
+        return (hardness + density + durability) as u128 * rarity * one_token;
     }
 
     pub(crate) fn stone_remove_from_user(&mut self, stone: &Stone, owner_id: &AccountId) {

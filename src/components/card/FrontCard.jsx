@@ -31,14 +31,6 @@ export const FrontCard = ({
             {type}
           </Rarity>
           {nft.sale_price && size !== "sm" && <Price title={nft.sale_price} />}
-
-          {nft.token_id && !noMenu && (
-            <CardDropdown
-              setTransferPopupVisible={setTransferPopupVisible}
-              setSellItems={setSellItems}
-              setKillItem={setKillItem}
-            />
-          )}
         </div>
       </div>
       {nft.token_id && (

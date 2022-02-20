@@ -8,7 +8,7 @@ NOTES:
   - The contract tracks the change in storage before and after the call. If the storage increases,
     the contract requires the caller of the contract to attach enough deposit to the function call
     to cover the storage cost.
-    This is done to prevent a denial of service attack on the contract by taking all available storage.
+    This is done to prevent a denial of service density on the contract by taking all available storage.
     If the storage decreases, the contract will issue a refund for the cost of the released storage.
     The unused tokens from the attached deposit are also refunded, so it's safe to
     attach more deposit than required.

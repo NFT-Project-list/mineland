@@ -98,8 +98,8 @@ export const Faq = ({ currentUser }) => {
                 </ul>
 
                 <h3 className="mt-3 font-semibold">Stones.</h3>
-                <p>Stones is your numerous army that will lead to achieve your goals. Each stone has its own
-                  characteristics of health, attack and brain that affect its price.
+                <p>Stones is your main in-game items that will lead to achieve your goals. Each stone has its own
+                  characteristics of hardness, density and durability that affect its price.
                   We have 4 types of Stone Card Rarity: Common, UnCommon, Rare and Legendary.</p>
                 <p>Additionally: bigger Mine you use for minting - more chances you have to get rare cards.</p>
 

@@ -5,6 +5,7 @@ import { formatId } from "utils/index";
 import { Button } from "components/basic/Button";
 import { ShoppingCartIcon } from "@heroicons/react/outline";
 import mine_back from "assets/images/mine_back.png";
+import { CardDropdown } from './CardDropdown';
 
 export const BackCard = ({
   nft,
@@ -14,6 +15,8 @@ export const BackCard = ({
   handleBuy,
   setSellPopupVisible,
   setTransferPopupVisible,
+  noMenu,
+  setKillItem
 }) => {
   const sizeMapping = {
     xsm: "h-24",
@@ -53,11 +56,11 @@ export const BackCard = ({
 
   const AdditionalInfoSection = () => (
     <>
-      {nft.health && nft.attack && nft.brain && (
+      {nft.hardness && nft.density && nft.durability && (
         <div className="mt-6">
-          <p>Health: {nft.health}</p>
-          <p>Attack: {nft.attack}</p>
-          <p>Brain: {nft.brain}</p>
+          <p>Hardness: {nft.hardness}</p>
+          <p>Density: {nft.density}</p>
+          <p>Durability: {nft.durability}</p>
         </div>
       )}
     </>
@@ -95,7 +98,18 @@ export const BackCard = ({
   return (
     <CardBack type={nft.mine_type ?? nft.card_rarity} className="relative">
       <BackImage />
-      <div className="absolute flex flex-col h-full w-full justify-center items-center">
+
+      <div className="relative z-20 justify-end flex mt-2 mr-2">
+        {nft.token_id && !noMenu && (
+          <CardDropdown
+            setTransferPopupVisible={setTransferPopupVisible}
+            setSellItems={setSellItems}
+            setKillItem={setKillItem}
+          />
+        )}
+      </div>
+
+      <div className="absolute flex flex-col h-full w-full justify-center items-center pb-20">
         <SellPriceSection />
         <InfoSection />
         <AdditionalInfoSection />
