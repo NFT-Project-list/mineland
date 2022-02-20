@@ -56,7 +56,7 @@ export const Collections = ({ currentUser, contract }) => {
                     <div className="basis-1/2 my-10 flex gap-7" key={collection.id}>
                       <div className="w-1/3 bg-[#0e0737]">
                         <img src={getMedia(collection.image)} alt={`collection #${collection.id}`}
-                             className="bg-cover h-full w-full border-4 rounded-xl border-gray-500" />
+                             className="bg-cover h-full w-full rounded-xl border-gray-500" />
                       </div>
                       <div className="w-2/3">
                         <p className="text-2xl mb-4 mt-4 font-semibold">

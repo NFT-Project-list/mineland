@@ -29,7 +29,6 @@ export const CardFront = styled.div.attrs((props) => ({
     absolute
     w-full
     h-full
-    border-4 
     rounded-xl
     ${statusColorBorderMap(props.type)}
   `,
