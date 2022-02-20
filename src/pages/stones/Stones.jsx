@@ -22,7 +22,7 @@ import Dropdown from "components/basic/Dropdown";
 import { Pagination } from "components/Pagination";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Popup } from "../../components/Popup";
-import { formatId } from '../../utils';
+import { formatId } from "../../utils";
 
 const PAGE_LIMIT = "40";
 
@@ -179,10 +179,14 @@ export const Stones = ({ currentUser, contract, sellList, setSellList }) => {
 
   const handleTransfer = async (stone, transferAddress) => {
     let gas = convertToTera("60");
-    await contract.transfer_stone({
-      token_id: stone.token_id,
-      recipient_id: transferAddress
-    }, gas, 1);
+    await contract.transfer_stone(
+      {
+        token_id: stone.token_id,
+        recipient_id: transferAddress,
+      },
+      gas,
+      1
+    );
   };
 
   const rarityOptions = () => {
@@ -240,9 +244,13 @@ export const Stones = ({ currentUser, contract, sellList, setSellList }) => {
 
   const handleKill = async () => {
     let gas = convertToTera("90");
-    await contract.stone_kill({
-      stone_id: killItem.token_id,
-    }, gas, 1);
+    await contract.stone_kill(
+      {
+        stone_id: killItem.token_id,
+      },
+      gas,
+      1
+    );
   };
 
   return (
@@ -307,31 +315,31 @@ export const Stones = ({ currentUser, contract, sellList, setSellList }) => {
 
               <div className="mt-10 pb-16 w-full">
                 {userMines.length &&
-                (userStones[0] > 0 ? (
-                  <div className="lg:flex flex-wrap items-center justify-center w-full gap-6">
-                    {userStones[1]?.map((stone, index) => (
-                      <Card
-                        nft={stone}
-                        key={index}
-                        sellItems={sellList['stones']}
-                        setSellItems={() => appendToSellList(stone)}
-                        handleTransfer={(transferAddress) =>
-                          handleTransfer(stone, transferAddress)
-                        }
-                        setKillItem={() => showKillPopup(stone)}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <div>
-                    You don't have{" "}
-                    <span className="ml-1 mr-2">{filterRarity}</span>
-                    {filterCollection
-                      ? allCollections[filterCollection].title
-                      : ""}{" "}
-                    Stones.
-                  </div>
-                ))}
+                  (userStones[0] > 0 ? (
+                    <div className="lg:flex flex-wrap items-center justify-center w-full gap-6">
+                      {userStones[1]?.map((stone, index) => (
+                        <Card
+                          nft={stone}
+                          key={index}
+                          sellItems={sellList["stones"]}
+                          setSellItems={() => appendToSellList(stone)}
+                          handleTransfer={(transferAddress) =>
+                            handleTransfer(stone, transferAddress)
+                          }
+                          setKillItem={() => showKillPopup(stone)}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <div>
+                      You don't have{" "}
+                      <span className="ml-1 mr-2">{filterRarity}</span>
+                      {filterCollection
+                        ? allCollections[filterCollection].title
+                        : ""}{" "}
+                      Stones.
+                    </div>
+                  ))}
               </div>
 
               <div className="mb-8">
@@ -362,23 +370,32 @@ export const Stones = ({ currentUser, contract, sellList, setSellList }) => {
         >
           {killItem && (
             <div className="mt-2">
-              <p className="mb-6">Stone {" "}
-                <span className="text-xl font-semibold">#{formatId(killItem.token_id)}</span>{" "}
+              <p className="mb-6">
+                Stone{" "}
+                <span className="text-xl font-semibold">
+                  #{formatId(killItem.token_id)}
+                </span>{" "}
                 will be removed and you will receive{" "}
-                <span className="text-xl font-semibold">{convertFromYocto(killItem.kill_tokens)} MNL</span> tokens.
+                <span className="text-xl font-semibold">
+                  {convertFromYocto(killItem.kill_tokens)} MNL
+                </span>{" "}
+                tokens.
               </p>
 
               <div className="mr-3 inline-block">
-                <Button title="Cancel" secondary noIcon onClick={() => setKillPopupVisible(false)} />
+                <Button
+                  title="Cancel"
+                  secondary
+                  noIcon
+                  onClick={() => setKillPopupVisible(false)}
+                />
               </div>
               <div className="inline-block">
                 <Button title="Exchange to MLN" onClick={handleKill} />
               </div>
             </div>
           )}
-
         </Popup>
-
       </Wrapper>
 
       <Footer />

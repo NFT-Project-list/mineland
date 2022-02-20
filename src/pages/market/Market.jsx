@@ -97,15 +97,15 @@ export const Market = ({ currentUser, contract }) => {
             {isReady ? (
               <div className="lg:flex items-center justify-center w-full flex-wrap gap-6">
                 {items.length &&
-                items.map((item, index) => (
-                  <Card
-                    nft={item}
-                    key={index}
-                    contract={contract}
-                    currentUser={currentUser}
-                    handleBuy={handleBuy}
-                  />
-                ))}
+                  items.map((item, index) => (
+                    <Card
+                      nft={item}
+                      key={index}
+                      contract={contract}
+                      currentUser={currentUser}
+                      handleBuy={handleBuy}
+                    />
+                  ))}
               </div>
             ) : (
               <Loader />

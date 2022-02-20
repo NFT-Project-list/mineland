@@ -13,7 +13,7 @@ import { Loader } from "components/basic/Loader";
 import { Popup } from "components/Popup";
 import { MintMineSection } from "./MintMineSection";
 import { Card } from "../../components/card/Card";
-import { convertFromYocto, convertToTera } from '../../near/api';
+import { convertFromYocto, convertToTera } from "../../near/api";
 
 export const Mines = ({ currentUser, contract, sellList, setSellList }) => {
   const [allMines, setAllMines] = useState({});
@@ -40,7 +40,7 @@ export const Mines = ({ currentUser, contract, sellList, setSellList }) => {
 
     Promise.all([userMinesPromise, allMinesPromise]).then((result) => {
       // Convert price from Yocto NEAR
-      const mines = result[0].map(ln => {
+      const mines = result[0].map((ln) => {
         if (ln.sale_price) {
           ln.sale_price = convertFromYocto(ln.sale_price);
         }
@@ -54,19 +54,26 @@ export const Mines = ({ currentUser, contract, sellList, setSellList }) => {
 
   const handleTransfer = async (mine, transferAddress) => {
     let gas = convertToTera("60");
-    await contract.transfer_mine({
-      token_id: mine.token_id,
-      recipient_id: transferAddress
-    }, gas, 1);
+    await contract.transfer_mine(
+      {
+        token_id: mine.token_id,
+        recipient_id: transferAddress,
+      },
+      gas,
+      1
+    );
   };
 
   const appendToSellList = (mine) => {
-    if (!sellList['mines'].filter(exist => exist.token_id === mine.token_id).length) {
-      sellList['mines'].push(mine);
-      sellList['stones'] = [];
+    if (
+      !sellList["mines"].filter((exist) => exist.token_id === mine.token_id)
+        .length
+    ) {
+      sellList["mines"].push(mine);
+      sellList["stones"] = [];
       setSellList({ ...sellList });
     }
-  }
+  };
 
   const showMintPopup = async () => {
     setMintPopupVisible(true);
@@ -103,9 +110,11 @@ export const Mines = ({ currentUser, contract, sellList, setSellList }) => {
                       key={index}
                       contract={contract}
                       currentUser={currentUser}
-                      sellItems={sellList['mines']}
+                      sellItems={sellList["mines"]}
                       setSellItems={() => appendToSellList(mine)}
-                      handleTransfer={(transferAddress) => handleTransfer(mine, transferAddress)}
+                      handleTransfer={(transferAddress) =>
+                        handleTransfer(mine, transferAddress)
+                      }
                     />
                   ))
                 ) : (
@@ -145,7 +154,6 @@ export const Mines = ({ currentUser, contract, sellList, setSellList }) => {
             />
           </div>
         </Popup>
-
       </Wrapper>
       <Footer />
     </InnerPageWrapper>

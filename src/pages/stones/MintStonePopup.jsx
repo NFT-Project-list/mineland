@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 import { convertFromNanoSeconds, getMedia } from "near/api";
 import { formatId } from "utils/index";
 import { Button } from "components/basic/Button";
-import { Popup } from 'components/Popup';
+import { Popup } from "components/Popup";
 
 export default function MintStonePopup({
   mintPopupVisible,
@@ -20,7 +20,7 @@ export default function MintStonePopup({
 
   useEffect(() => {
     funRef.current = setInterval(() => {
-      setCurrentDate(Date.now())
+      setCurrentDate(Date.now());
     }, 1000);
     return () => {
       clearInterval(funRef.current);
@@ -42,7 +42,7 @@ export default function MintStonePopup({
       seconds = `0${seconds}`;
     }
     return hours + " hours " + minutes + " min " + seconds + " sec.";
-  }
+  };
 
   const timeDiff = (timeInMs) => {
     const timeNow = new Date().getTime();
@@ -53,10 +53,11 @@ export default function MintStonePopup({
   };
 
   return (
-    <Popup title="Mint Stones"
-           popupVisible={mintPopupVisible}
-           setPopupVisible={setMintPopupVisible}>
-
+    <Popup
+      title="Mint Stones"
+      popupVisible={mintPopupVisible}
+      setPopupVisible={setMintPopupVisible}
+    >
       <div className="mt-2 text-left">
         {userMines.map((mine) => (
           <div className="flex gap-4 mb-3" key={mine.token_id}>
@@ -76,22 +77,22 @@ export default function MintStonePopup({
                     title="Mint Stones"
                     size="sm"
                     secondary
-                    onClick={() =>
-                      handleMint(mine.token_id, mine.mine_type)
-                    }
+                    onClick={() => handleMint(mine.token_id, mine.mine_type)}
                   />
                 </div>
               ) : (
                 <p className="text-red-300 text-center pl-7 text-base pt-2 leading-4 font-[Exo]">
-                  <small>Next mint:</small><br />
-                  <small>{secondsToString(timeDiff(mine.last_stone_claim))}</small>
+                  <small>Next mint:</small>
+                  <br />
+                  <small>
+                    {secondsToString(timeDiff(mine.last_stone_claim))}
+                  </small>
                 </p>
               )}
             </div>
           </div>
         ))}
       </div>
-
     </Popup>
   );
 }
