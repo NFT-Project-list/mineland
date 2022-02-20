@@ -372,7 +372,7 @@ export const Stones = ({ currentUser, contract, sellList, setSellList }) => {
                 <Button title="Cancel" secondary noIcon onClick={() => setKillPopupVisible(false)} />
               </div>
               <div className="inline-block">
-                <Button title="Destroy Stone" onClick={handleKill} />
+                <Button title="Exchange to MLN" onClick={handleKill} />
               </div>
             </div>
           )}

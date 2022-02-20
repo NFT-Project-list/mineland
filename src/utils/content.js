@@ -83,9 +83,8 @@ export const MineContent = {
 
 export const StoneContent = {
   title: "My Stones",
-  description: `It is a long established fact that a reader will be distracted the
-  readable content of page when looking at it layout the point using
-  lorem Ipsum is that it has a more-or-less normal distribution and normal distribution.`,
+  description: `Stones is your main in-game items that will lead to achieve your goals. Each stone has its own 
+  characteristics of hardness, density and durability that affect price for each stone.`,
   mint_stone_from_mine: "Select mine you want to mint stones for:",
   no_stones: "You have no Stones",
   no_mines_details:
@@ -94,16 +93,12 @@ export const StoneContent = {
 
 export const CollectionContent = {
   title: "All Collections",
-  description: `It is a long established fact that a reader will be distracted the
-  readable content of page when looking at it layout the point using
-  lorem Ipsum is that it has a more-or-less normal distribution and normal distribution.`,
+  description: `Complete list of all stone collections. Later you will be able to open and see all collection items and your own NFTs.`,
 };
 
 export const MarketContent = {
   title: "Market",
-  description: `It is a long established fact that a reader will be distracted the
-  readable content of page when looking at it layout the point using
-  lorem Ipsum is that it has a more-or-less normal distribution and normal distribution.`,
+  description: `In the market you can bye/sell mines and stones. Get your best deals and sell everything you don't need in our market!`,
 };
 
 export const ContactUsContent = {
