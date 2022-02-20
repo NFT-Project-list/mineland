@@ -365,7 +365,7 @@ export const Stones = ({ currentUser, contract, sellList, setSellList }) => {
               <p className="mb-6">Stone {" "}
                 <span className="text-xl font-semibold">#{formatId(killItem.token_id)}</span>{" "}
                 will be removed and you will receive{" "}
-                <span className="text-xl font-semibold">{convertFromYocto(killItem.kill_tokens)} ZML</span> tokens.
+                <span className="text-xl font-semibold">{convertFromYocto(killItem.kill_tokens)} MNL</span> tokens.
               </p>
 
               <div className="mr-3 inline-block">

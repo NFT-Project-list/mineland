@@ -46,8 +46,8 @@ impl Contract {
             total_supply,
             FungibleTokenMetadata {
                 spec: FT_METADATA_SPEC.to_string(),
-                name: "ZomMine Token".to_string(),
-                symbol: "ZML".to_string(),
+                name: "MineLand Token".to_string(),
+                symbol: "MNL".to_string(),
                 icon: Some(FT_IMAGE_ICON.to_string()),
                 reference: None,
                 reference_hash: None,

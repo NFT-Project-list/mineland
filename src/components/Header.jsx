@@ -66,7 +66,7 @@ export const Header = ({ currentUser }) => {
                         {currentUser.accountId}
                       </p>
                       {userTokenBalance != null && (
-                        <span className="font-bold text-xl">{convertFromYocto(userTokenBalance, 2)} ZML</span>
+                        <span className="font-bold text-xl">{convertFromYocto(userTokenBalance, 2)} MNL</span>
                       )}
                     </Link>
 

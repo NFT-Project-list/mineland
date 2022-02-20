@@ -22,16 +22,16 @@ export const Token = ({ currentUser }) => {
               <div className="w-3/4">
                 <p>
                   Your Balance: {" "}
-                  <span className="text-xl font-semibold">{convertFromYocto(currentUser.tokenBalance, 2)} ZML</span>
+                  <span className="text-xl font-semibold">{convertFromYocto(currentUser.tokenBalance, 2)} MNL</span>
                   <span className="ml-4 mr-4 text-gray-500 text-xl align-middle">|</span>
                   <span>
-                    Staked ZML: <span className="text-xl font-semibold">0 ZML</span>
+                    Staked MNL: <span className="text-xl font-semibold">0 MNL</span>
                   </span>
                 </p>
                 <div className="mt-8">
                   <input type="number" min="1"
                          className="px-3 py-2.5 rounded-md mr-2 bg-transparent border-indigo-500 text-indigo-100 border-2"
-                         placeholder="Amount ZML" />
+                         placeholder="Amount MNL" />
                   <Button secondary title="Deposit" />
                 </div>
               </div>

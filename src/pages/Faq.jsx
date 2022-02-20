@@ -107,7 +107,7 @@ export const Faq = ({ currentUser }) => {
                 <ul>
                   <li>&minus; Create a collection - exchanges your stones for a real monster with extra features.</li>
                   <li>&minus; Sell in the market.</li>
-                  <li>&minus; Kill to get ZML tokens (used for DAO and staking rewards).</li>
+                  <li>&minus; Kill to get MNL tokens (used for DAO and staking rewards).</li>
                   <li>&minus; Send to another user.</li>
                 </ul>
 
@@ -115,7 +115,7 @@ export const Faq = ({ currentUser }) => {
                 <p>Your stones can be combined to Collection and exchanged to the Monster - strong, cool and powerful
                   stone that have additional features:</p>
                 <ul>
-                  <li>&minus; Increase ZML token staking rewards (additional percent is based on Monster Card rarity).
+                  <li>&minus; Increase MNL token staking rewards (additional percent is based on Monster Card rarity).
                   </li>
                   <li>&minus; Explore the planet to find new items for your inventory. Be careful, there is Monster
                     hunters in your planet!

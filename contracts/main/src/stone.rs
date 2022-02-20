@@ -55,7 +55,7 @@ pub struct Stone {
 
 impl Stone {
     pub fn get_kill_tokens(&self, timestamp: u64) -> u128 {
-        let token_count = 100_000_000_000_000_000_000_000; // 0.1 ZML
+        let token_count = 100_000_000_000_000_000_000_000; // 0.1 MNL
         let duration = timestamp - self.mint_date;
         let coefficient = fast_math::log2_raw(duration as f32) as u128;
 
@@ -274,7 +274,7 @@ impl Contract {
     pub(crate) fn stone_remove_token_transfer(&self, stone: Stone) -> String {
         let kill_tokens = stone.get_kill_tokens(env::block_timestamp());
 
-        // transfer ZML tokens
+        // transfer MNL tokens
         let ft_mint_gas: Gas = self.to_tera(10);
         Promise::new(self.contract_ft.to_string()).function_call(
             b"ft_transfer".to_vec(),

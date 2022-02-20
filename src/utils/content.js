@@ -64,8 +64,8 @@ export const HomeContent = {
       },
       {
         date: "September 1, 2022",
-        title: "Listing ZML",
-        desc: "We have plan to list ZML in one of popular exchanges",
+        title: "Listing MNL",
+        desc: "We have plan to list MNL in one of popular exchanges",
         type: "incomming"
       },
     ],
@@ -123,7 +123,7 @@ export const FAQContent = {
 //   NFTs and tokenomics. Know your limits and don't risk more than you are willing to lose.
 
 export const TokenContent = {
-  title: "ZML Staking",
+  title: "MNL Staking",
   description: `Earn passive income by staking your tokens. 
   Increase your rewards by adding Monster card: higher card rarity level will give you better staking percent!`,
 };
