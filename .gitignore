@@ -13,6 +13,7 @@ yarn.lock
 neardev/
 .idea
 .cache/
+.parcel-cache/
 
 /contracts/target/
 /contracts/**/target/

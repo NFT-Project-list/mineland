@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./app";
 import { Buffer } from "buffer";
-import "../src/assets/styles/index.css";
+import "./assets/styles/index.css";
 
 // it prevents react to raise an error with Buffer size
 // when we try to use window object

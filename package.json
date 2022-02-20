@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run build:contracts && npm run build:web",
     "build:contracts": "(cd contracts && ./build.sh)",
-    "build:web": "parcel build src/index.html --public-url ./",
+    "build:web": "parcel build public/index.html --public-url ./",
     "dev:deploy:contracts": "yarn build:contracts && rm -rf neardev && ./dev-deploy.sh && ./bootstrap.sh",
     "dev:deploy:main": "yarn build:contracts && near dev-deploy",
     "prestart": "rm -rf ./parcel-cache",
@@ -16,9 +16,7 @@
     "test": "yarn test:contracts && jest test --runInBand"
   },
   "devDependencies": {
-    "@babel/core": "~7.14.0",
-    "@babel/preset-env": "~7.14.0",
-    "@babel/preset-react": "~7.13.13",
+    "@parcel/babel-preset-env": "^2.3.2",
     "@parcel/packager-raw-url": "^2.3.2",
     "@parcel/transformer-webmanifest": "^2.3.2",
     "autoprefixer": "^10.4.1",
@@ -41,9 +39,6 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.3"
-  },
-  "resolutions": {
-    "@babel/preset-env": "7.13.8"
   },
   "eslintConfig": {
     "extends": [
