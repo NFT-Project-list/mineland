@@ -1,4 +1,4 @@
-MineMine
+Mine Land
 ==================
 
 This [React] app was initialized with [create-near-app]
@@ -80,6 +80,10 @@ One command:
 
     yarn deploy
 
+To build it locally run:
+
+    yarn dev:deploy:contracts
+
 As you can see in `package.json`, this does two things:
 
 1. builds & deploys smart contract to NEAR TestNet
@@ -94,9 +98,6 @@ On Windows, if you're seeing an error containing `EPERM` it may be related to sp
 
   [React]: https://reactjs.org/
   [create-near-app]: https://github.com/near/create-near-app
-  [Node.js]: https://nodejs.org/en/download/package-manager/
-  [jest]: https://jestjs.io/
   [NEAR accounts]: https://docs.near.org/docs/concepts/account
   [NEAR Wallet]: https://wallet.testnet.near.org/
   [near-cli]: https://github.com/near/near-cli
-  [gh-pages]: https://github.com/tschaub/gh-pages
