@@ -62,8 +62,8 @@ pub struct Mine {
 impl Mine {
     pub fn mine_media_hash(mine_type: &MineType) -> String {
         match mine_type {
-            MineType::Small => String::from("bafkreiay22z3j7gbgl4qucxc5l4f5grgw2lukesaphclj42cbsaznmgpqa"),
-            MineType::Medium => String::from("bafkreiarhc2ivvhhcsfqiym6g3er7lnktdiw6rlmahco7l3awtvcvxve4m"),
+            MineType::Small => String::from("bafkreicqth6lnfkhv4bmyc3l2ut7fbd7d2q6uneb7dv5wgten2rlocoskm"),
+            MineType::Medium => String::from("bafkreiay22z3j7gbgl4qucxc5l4f5grgw2lukesaphclj42cbsaznmgpqa"),
             MineType::Large => String::from("bafkreiarhc2ivvhhcsfqiym6g3er7lnktdiw6rlmahco7l3awtvcvxve4m"),
         }
     }
