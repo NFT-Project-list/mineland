@@ -56,7 +56,7 @@ export const BackCard = ({
 
   const AdditionalInfoSection = () => (
     <>
-      {nft.hardness && nft.density && nft.durability && (
+      {nft.hardness >= 0 && nft.density >= 0 && nft.durability >= 0 && (
         <div className="mt-6 text-gray-900">
           <p>Hardness: {nft.hardness}</p>
           <p>Density: {nft.density}</p>
