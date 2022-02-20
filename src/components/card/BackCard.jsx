@@ -45,10 +45,10 @@ export const BackCard = ({
 
   const InfoSection = () => (
     <>
-      <div className="font-semibold text-purple-600">
+      <div className="font-semibold text-gray-600">
         {nft.card_rarity || nft.mine_type}
       </div>
-      <div className="text-4xl font-semibold text-purple-600">
+      <div className="text-4xl font-semibold text-gray-600">
         #{nft.token_id ? formatId(nft.token_id) : ""}
       </div>
     </>
@@ -57,7 +57,7 @@ export const BackCard = ({
   const AdditionalInfoSection = () => (
     <>
       {nft.hardness && nft.density && nft.durability && (
-        <div className="mt-6">
+        <div className="mt-6 text-gray-900">
           <p>Hardness: {nft.hardness}</p>
           <p>Density: {nft.density}</p>
           <p>Durability: {nft.durability}</p>
@@ -99,7 +99,7 @@ export const BackCard = ({
     <CardBack type={nft.mine_type ?? nft.card_rarity} className="relative">
       <BackImage />
 
-      <div className="relative z-20 justify-end flex mt-2 mr-2">
+      <div className="relative z-20 justify-end flex pt-3 mr-4">
         {nft.token_id && !noMenu && (
           <CardDropdown
             setTransferPopupVisible={setTransferPopupVisible}

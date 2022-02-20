@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import logo from "assets/images/logo.png";
 import { Container, Link, NavLink, Row } from "assets/styles/common.style";
 import { convertFromYocto, login, logout } from "near/api";
 import { Button } from "./basic/Button";
@@ -29,7 +28,6 @@ export const Header = ({ currentUser }) => {
       <Container>
         <Row className="justify-between">
           <Link to="/" className="flex flex-row hover:text-indigo-50">
-            <img src={logo} alt="logo" width="40" className="basis-1/4" />
             <span className="stone-font ml-3 text-4xl font-normal hover:text-indigo-50">
               MineLand
             </span>

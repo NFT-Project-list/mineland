@@ -8,7 +8,7 @@ module.exports = {
         gray: {
           900: "#070707",
         },
-        main: "#0c0635",
+        main: "#2c3140",
       },
     },
   },

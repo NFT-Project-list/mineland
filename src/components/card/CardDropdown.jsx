@@ -33,7 +33,7 @@ export const CardDropdown = ({
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="cursor-pointer hover:text-orange-600">
+        <Menu.Button className="cursor-pointer text-gray-600 hover:text-gray-900">
           <DotsVerticalIcon className="h-7 w-7" aria-hidden="true" />
         </Menu.Button>
       </div>

@@ -23,7 +23,7 @@ export const FrontCard = ({
         alt={nft.token_id ? nft.token_id : ""}
       />
       <div className="absolute flex w-full">
-        <div className="flex w-full p-2 items-center justify-between">
+        <div className="flex w-full px-8 pt-4 items-center justify-between">
           <Rarity
             type={type}
             className={`${size !== "sm" ? "pl-2" : "text-sm pl-1"}`}
@@ -35,8 +35,8 @@ export const FrontCard = ({
       </div>
       {nft.token_id && (
         <div
-          className={`absolute flex font-semibold justify-center w-full ${
-            size === "sm" ? "bottom-1 text-base" : "bottom-3 text-2xl"
+          className={`absolute flex font-semibold justify-center w-full text-gray-900 ${
+            size === "sm" ? "bottom-2 text-base" : "bottom-6 text-2xl"
           }`}
         >
           #{formatId(nft.token_id)}

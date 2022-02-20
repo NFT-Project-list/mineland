@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "assets/images/logo.png";
 import { Col, Container, Link, Row } from "assets/styles/common.style";
 import SocialLinks from "components/SocialLinks";
 
@@ -10,7 +9,6 @@ export const Footer = () => (
         <div className="w-1/4">
           <Row>
             <Col>
-              <img src={logo} alt="logo" width="55" className="opacity-70" />
             </Col>
             <Col className="ml-3">
               <span className="stone-font text-2xl font-normal hover:text-indigo-50 opacity-70">

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { statusColorBorderMap, statusColorTextMap } from "utils";
+import { statusColorBorderMap } from "utils";
 
 export const CardInner = styled.div.attrs(() => ({
   className: `relative h-full w-full text-center`,
@@ -41,7 +41,7 @@ export const Rarity = styled.div.attrs((props) => ({
   className: `
     uppercase
     font-semibold
-    ${statusColorTextMap(props.type)}
+    text-gray-900
   `,
 }))``;
 
