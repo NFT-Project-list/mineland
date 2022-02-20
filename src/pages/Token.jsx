@@ -39,10 +39,12 @@ export const Token = ({ currentUser }) => {
               <div className="w-1/4 border-l-2 border-gray-800 border-dashed">
                 <div className="w-64 h-80 bg-[#0d376f] ml-4 px-10 pt-24">
                   <p className="mb-4 font-semibold">Select Stone to increase your reward:</p>
-                  <p>Common: +2%</p>
-                  <p>Common: +4%</p>
-                  <p>Common: +12%</p>
-                  <p>Common: +25%</p>
+                  <div className="text-left ml-4">
+                    <p><span className="w-24 inline-block">Common:</span> +2%</p>
+                    <p><span className="w-24 inline-block">UnCommon:</span> +4%</p>
+                    <p><span className="w-24 inline-block">Rare:</span> +12%</p>
+                    <p><span className="w-24 inline-block">Legendary:</span> +25%</p>
+                  </div>
                 </div>
               </div>
             </div>
