@@ -30,14 +30,14 @@ export const Token = ({ currentUser }) => {
                 </p>
                 <div className="mt-8">
                   <input type="number" min="1"
-                         className="px-3 py-2.5 rounded-md mr-2 bg-transparent border-indigo-500 text-indigo-100 border-2"
+                         className="px-3 py-2.5 rounded-md mr-2 bg-transparent border-gray-500 text-indigo-100 border-2"
                          placeholder="Amount MNL" />
                   <Button secondary title="Deposit" />
                 </div>
               </div>
 
               <div className="w-1/4 border-l-2 border-gray-800 border-dashed">
-                <div className="w-64 h-80 bg-[#0d376f] ml-4 px-10 pt-24">
+                <div className="w-64 h-80 bg-gray-800 ml-4 px-10 pt-24">
                   <p className="mb-4 font-semibold">Select Stone to increase your reward:</p>
                   <div className="text-left ml-4">
                     <p><span className="w-24 inline-block">Common:</span> +2%</p>

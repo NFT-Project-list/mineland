@@ -124,7 +124,7 @@ export const Card = ({
             <p className="mb-6 mt-6">You can transfer this NFT to any NEAR account.</p>
             <p className="mb-3">
               <input type="text"
-                     className="px-4 py-2 w-full rounded-md bg-transparent border-indigo-500 text-indigo-100 border-2"
+                     className="px-4 py-2 w-full rounded-md bg-transparent border-gray-500 text-indigo-100 border-2"
                      placeholder="NEAR Address"
                      value={transferAddress}
                      onChange={(e) => setTransferAddress(e.target.value)}
