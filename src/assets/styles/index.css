@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania:wght@400;600&display=swap");
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-size: cover;
+  background-color: #090029;
+  line-height: 1.35;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  visibility: visible;
+  font-family: "Exo", sans-serif;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.stone-font {
+  font-family: "Metal Mania", sans-serif;
+}
+
+.mineing-bg {
+  background: url("../images/body-bg.webp") repeat-y top/cover;
+}
+
+.top-block {
+  background: url("../images/hero-bg1.webp") no-repeat top/contain;
+}
+
+.title-shadow {
+  text-shadow: 3px 3px 0 #b154f0;
+}
+
+.active {
+  @apply bg-purple-800 text-indigo-50;
+}
+
+.mineing-bg .active {
+  @apply bg-transparent;
+}
+
+/* Pagination */
+.page-item,
+.page-item.active {
+  @apply inline-block bg-transparent mr-2 font-semibold;
+}
+
+.page-item .page-link {
+  @apply inline-block w-9 h-9 pt-2 rounded-full;
+}
+
+.page-item.active .page-link {
+  @apply bg-[#065e88];
+}
+
+.timeline-body {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.timeline-body .timeline-title {
+  margin-bottom: 1.4rem;
+}
+.timeline-body .timeline-title .badge {
+  background: #4f537b;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.timeline-body .timeline-subtitle {
+  font-weight: 300;
+  font-style: italic;
+  opacity: 0.4;
+  margin-top: 16px;
+  font-size: 11px;
+}
