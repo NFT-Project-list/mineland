@@ -111,18 +111,6 @@ export const Faq = ({ currentUser }) => {
                   <li>&minus; Send to another user.</li>
                 </ul>
 
-                <h3 className="mt-3 font-semibold">Monsters.</h3>
-                <p>Your stones can be combined to Collection and exchanged to the Monster - strong, cool and powerful
-                  stone that have additional features:</p>
-                <ul>
-                  <li>&minus; Increase MNL token staking rewards (additional percent is based on Monster Card rarity).
-                  </li>
-                  <li>&minus; Explore the planet to find new items for your inventory. Be careful, there is Monster
-                    hunters in your planet!
-                  </li>
-                  <li>&minus; Battle with other Monsters to improve your monster skills and rarity (on win).</li>
-                </ul>
-
               </FaqQuestion>
 
 

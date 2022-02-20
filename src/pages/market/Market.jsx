@@ -59,19 +59,6 @@ export const Market = ({ currentUser, contract }) => {
     setActive("Stones");
   };
 
-  const getMonsters = async () => {
-    // setIsReady(false)
-    // const items = await contract
-    //   .get_collections_from_market({
-    //     start: START,
-    //     limit: LIMIT,
-    //   })
-    //   .catch((err) => console.log(err));
-    // setItems(items);
-    // setIsReady(true)
-    // setActive("Collections");
-  };
-
   useEffect(() => {
     getMines();
   }, []);
@@ -103,11 +90,6 @@ export const Market = ({ currentUser, contract }) => {
                   title: "Stones",
                   onClick: () => getStones(),
                   active: active === "Stones",
-                },
-                {
-                  title: "Monsters",
-                  onClick: () => getMonsters(),
-                  active: active === "Monsters",
                 },
               ]}
             />
