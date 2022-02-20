@@ -61,7 +61,7 @@ export const Header = ({ currentUser }) => {
               <div className="flex flex-row">
                 <div className="text-right">
                   <div className="mr-10 w-40">
-                    <Link to="/token">
+                    <Link to="/token" className="hover:text-indigo-100">
                       <p className="whitespace-nowrap overflow-hidden pt-1 font-medium">
                         {currentUser.accountId}
                       </p>
